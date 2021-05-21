@@ -1,0 +1,12 @@
+/back/app.yaml
+/back/.env
+/back/node_modules
+/back/yarn.lock
+/back/package-lock.json
+
+/painel/node_modules
+/painel/build
+/painel/.firebase
+/painel/.firebase/*
+/painel/yarn.lock
+/painel/package-lock.json

@@ -32,9 +32,6 @@ const properties = {
     enum: ['admin', 'user'],
     default: 'user'
   },
-  phone: {
-    type: String
-  },
   password: {
     type: String,
     bcrypt: true
@@ -53,6 +50,8 @@ const properties = {
     }
   }]
 }
+
+
 const options = {
   collection: 'users',
   id: true,

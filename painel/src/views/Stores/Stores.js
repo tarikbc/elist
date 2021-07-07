@@ -81,10 +81,7 @@ const Stores = ({ history }) => {
   const classes = useStyles()
 
   // Redux
-  const storesReport = useSelector(state => state.report.storesReport)
   const user = useSelector(state => state.user.user)
-
-  const [gridView, setGridView] = useState(false)
 
   const token = window.localStorage.getItem('@Elist:token')
 
@@ -110,16 +107,6 @@ const Stores = ({ history }) => {
       <Grid container spacing={4}>
         <Grid item xs={12}>
           <StoresTable
-            stores={storesReport ? storesReport.stores.map(store => ({
-              ...store,
-              sold: store.total.sold,
-              sales: store.total.sales,
-              items: store.total.items.toFixed(),
-              goalPercent: Number((((store.total.sold / store.metric.acDayGoal) || 0) * 100).toFixed(2)),
-              acDayGoal: store.metric.acDayGoal,
-              mainGoal: store.metric.mainGoal,
-              projection: store.projection.sold
-            })) : []}
             handleSelectStore={handleSelectStore}
           />
         </Grid>

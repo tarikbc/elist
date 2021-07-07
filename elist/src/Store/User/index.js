@@ -1,9 +1,11 @@
 import { buildSlice } from '@thecodingmachine/redux-toolkit-wrapper'
-import FetchOne from './FetchOne'
+import Login from './Login'
+import Logout from './Logout'
+import ClearError from '~/Store/ClearError'
 
-// This state is common to all the "user" module, and can be modified by any "user" reducers
 const sliceInitialState = {
-  item: {},
+  loggedUser: null,
+  modal: false
 }
 
-export default buildSlice('user', [FetchOne], sliceInitialState).reducer
+export default buildSlice('user', [Modal, Login, Logout, EditUser, Load, Fetch, UploadPhotos, Connect, View, ClearError('user')], sliceInitialState).reducer

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.14.1",
+    "@react-native-community/async-storage": "^1.12.1",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/bottom-tabs": "^5.11.8",
     "@react-navigation/native": "^5.9.3",
@@ -20,6 +21,7 @@
     "@thecodingmachine/redux-toolkit-wrapper": "2.0.1",
     "axios": "^0.21.1",
     "i18next": "^19.9.2",
+    "jwt-decode": "^3.1.2",
     "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-i18next": "^11.8.10",

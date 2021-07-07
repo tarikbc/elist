@@ -1,6 +1,6 @@
 import axios from 'axios'
-import handleError from '@/Services/utils/handleError'
-import { Config } from '@/Config'
+import AsyncStorage from '@react-native-community/async-storage'
+import { Config } from '~/Config'
 
 const instance = axios.create({
   baseURL: Config.API_URL,
@@ -12,10 +12,21 @@ const instance = axios.create({
 })
 
 instance.interceptors.response.use(
-  response => response,
+  (response) => response,
   ({ message, response: { data, status } }) => {
-    return handleError({ message, data, status })
+    return Promise.reject({ message, data, status })
   },
 )
+
+export const loadToken = async () => {
+  try {
+    const token = await AsyncStorage.getItem('@elist:authToken')
+    instance.defaults.headers.common['Authorization'] = token ? 'Bearer ' + token : null
+  } catch (err) {
+    console.log('Erro token', err)
+  }
+}
+
+loadToken()
 
 export default instance

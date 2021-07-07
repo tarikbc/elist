@@ -1,6 +1,6 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { IndexExampleContainer } from '@/Containers'
+import { IndexExampleContainer } from '~/Containers'
 
 const Tab = createBottomTabNavigator()
 

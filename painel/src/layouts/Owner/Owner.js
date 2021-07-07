@@ -56,10 +56,7 @@ export default function Owner({ children }) {
   const user = useSelector(state => state.user.user)
   const error = useSelector(state => state.error.error)
 
-  const inputLoading = useSelector(state => state.input.loading)
   const userLoading = useSelector(state => state.user.loading)
-  const goalLoading = useSelector(state => state.goal.loading)
-  const reportLoading = useSelector(state => state.report.loading)
 
   const history = useHistory()
 
@@ -116,7 +113,7 @@ export default function Owner({ children }) {
   }, [user, token])
 
   return (
-    <LoadingOverlay active={userLoading || inputLoading || goalLoading || reportLoading} spinner>
+    <LoadingOverlay active={userLoading} spinner>
       <div
         className={clsx({
           [classes.root]: true,

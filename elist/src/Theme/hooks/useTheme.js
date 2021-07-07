@@ -1,13 +1,13 @@
 import { useColorScheme } from 'react-native'
 import { useSelector } from 'react-redux'
 import { DarkTheme, DefaultTheme } from '@react-navigation/native'
-import Fonts from '@/Theme/Fonts'
-import Gutters from '@/Theme/Gutters'
-import Images from '@/Theme/Images'
-import Layout from '@/Theme/Layout'
-import Common from '@/Theme/Common'
-import * as DefaultVariables from '@/Theme/Variables'
-import themes from '@/Theme/themes'
+import Fonts from '~/Theme/Fonts'
+import Gutters from '~/Theme/Gutters'
+import Images from '~/Theme/Images'
+import Layout from '~/Theme/Layout'
+import Common from '~/Theme/Common'
+import * as DefaultVariables from '~/Theme/Variables'
+import themes from '~/Theme/themes'
 
 export default function () {
   // Get the scheme device
@@ -15,8 +15,7 @@ export default function () {
 
   // Get current theme from the store
   const currentTheme = useSelector(state => state.theme.theme || 'default')
-  const isDark = useSelector(state => state.theme.darkMode)
-  const darkMode = isDark === null ? colorScheme === 'dark' : isDark
+  const darkMode = false
   //Select the right theme light theme ({} if not exist)
   const { Variables: themeConfigVars = {}, ...themeConfig } =
     themes[currentTheme] || {}

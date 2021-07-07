@@ -76,7 +76,7 @@ const Topbar = ({
   })
 
   return (
-    <AppBar {...rest} className={clsx(classes.root, className)} color={process.env.NODE_ENV === 'development' ? 'secondary' : 'primary'}>
+    <AppBar {...rest} className={clsx(classes.root, className)} color={process.env.NODE_ENV === 'development' && false ? 'secondary' : 'primary'}>
       <Toolbar>
         <RouterLink to={`/${currentStoreId}/events`}>
           <div className={classes.titleBox}>
@@ -98,7 +98,7 @@ const Topbar = ({
             )}
           </div>
         </RouterLink>
-        {process.env.NODE_ENV === 'development' && (
+        {process.env.NODE_ENV === 'development' && false && this(
           <>
             <Typography variant='h3' className={classes.dev}>
               {isDesktop && 'Desenvolvimento'}

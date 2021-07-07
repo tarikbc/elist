@@ -19,6 +19,7 @@ const properties = {
   city: String,
   cnpj: String,
 }
+
 const options = {
   collection: 'stores',
   id: true,
